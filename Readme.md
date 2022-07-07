@@ -1,6 +1,6 @@
 
 
-Discord - https://discord.gg/XPuqBVtyqX
+Discord - https://discord.gg/3WYz3zaqG5
 
 # A Luchetti Job for qbcore by oosayeroo Scripts
 ## Please note
