@@ -6,11 +6,11 @@ PlayerJob = {}
 local onDuty = false
 
 Citizen.CreateThread(function()
-	exports['qb-target']:AddBoxZone("LuchettiDuty", vector3(292.05, -980.14, 29.52), 0.30, 1.2, {
+	exports['qb-target']:AddBoxZone("LuchettiDuty", vector3(292.05, -980.14, 29.52), 1.0, 1.2, {
 		name = "LuchettiDuty",
 		heading = 1.0,
-		debugPoly = false,
-		minZ=28.0,
+		debugPoly = Config.DebugLuchettiPoly,
+		minZ=29.5,
 		maxZ=30.5,
 	}, {
 		options = {
@@ -25,12 +25,12 @@ Citizen.CreateThread(function()
 	})
 
 
-		exports['qb-target']:AddBoxZone("LuchettiTable1", vector3(291.77, -971.32, 29.42), 1.05, 1.0, {
+		exports['qb-target']:AddBoxZone("LuchettiTable1", vector3(291.77, -971.32, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable1",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -47,12 +47,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable2", vector3(289.45, -971.38, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable2", vector3(289.45, -971.38, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable2",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -69,12 +69,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable3", vector3(287.05, -971.45, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable3", vector3(287.05, -971.45, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable3",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -91,12 +91,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable4", vector3(284.97, -969.35, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable4", vector3(284.97, -969.35, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable4",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -113,12 +113,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable5", vector3(287.12, -968.55, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable5", vector3(287.12, -968.55, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable5",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -135,12 +135,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable6", vector3(289.51, -968.56, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable6", vector3(289.51, -968.56, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable6",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -157,12 +157,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable7", vector3(291.81, -968.47, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable7", vector3(291.81, -968.47, 29.42), 1.0, 1.0, {
 			name = "LuchettiTable7",
 			heading = 100.0,
-			debugPoly = false,
+			debugPoly = Config.DebugLuchettiPoly,
 			minZ=29.0,
-			maxZ=30.0,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -179,12 +179,12 @@ Citizen.CreateThread(function()
 			distance = 1.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable8", vector3(296.06, -966.61, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable8", vector3(295.56, -966.48, 28.97), 1.00, 1.7, {
 			name = "LuchettiTable8",
-			heading = 100.0,
-			debugPoly = false,
-			minZ=29.0,
-			maxZ=30.0,
+			heading = 359.0,
+			debugPoly = Config.DebugLuchettiPoly,
+			minZ=29.2,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -201,12 +201,12 @@ Citizen.CreateThread(function()
 			distance = 2.5
 		})
 
-        exports['qb-target']:AddBoxZone("LuchettiTable9", vector3(296.21, -969.9, 29.42), 1.05, 1.0, {
+        exports['qb-target']:AddBoxZone("LuchettiTable9", vector3(295.51, -969.91, 28.98), 1.00, 1.7, {
 			name = "LuchettiTable9",
-			heading = 100.0,
-			debugPoly = false,
-			minZ=29.0,
-			maxZ=30.0,
+			heading = 359.0,
+			debugPoly = Config.DebugLuchettiPoly,
+			minZ=29.2,
+			maxZ=29.5,
 		}, {
 			options = {
 			    {
@@ -224,12 +224,12 @@ Citizen.CreateThread(function()
 		})
 
 
-	exports['qb-target']:AddBoxZone("luchettidrinkmenu", vector3(289.75, -978.48, 29.43), 1.8, 1.0, {
+	exports['qb-target']:AddBoxZone("luchettidrinkmenu", vector3(289.96, -979.29, 29.53), 1.0, 1.0, {
 		name="luchettidrinkmenu",
-		heading=184,
-		debugPoly=false,
+		heading=179,
+		debugPoly=Config.DebugLuchettiPoly,
 		minZ=28.0,
-		maxZ=30.0,
+		maxZ=29.8,
 	}, {
 		options = {
 			{
@@ -244,12 +244,12 @@ Citizen.CreateThread(function()
 
 
 
-        exports['qb-target']:AddBoxZone("luchettistorageshelf", vector3(283.28, -978.18, 29.43), 4.6, 1.2, {
+        exports['qb-target']:AddBoxZone("luchettistorageshelf", vector3(282.6, -978.05, 30.24), 2.0, 0.8, {
             name="luchettistorageshelf",
-            heading=31,
-            debugPoly=false,
-            minZ=28.0,
-            maxZ=30.0,
+            heading=178,
+            debugPoly=Config.DebugLuchettiPoly,
+            minZ=29.0,
+            maxZ=32.0,
         }, {
                 options = {
                     {
@@ -262,12 +262,31 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-            exports['qb-target']:AddBoxZone("luchettiwinefridge", vector3(294.67, -975.77, 29.43), 4.6, 1.2, {
+            exports['qb-target']:AddBoxZone("luchettisafe1", vector3(297.36, -989.51, 29.38), 0.5, 0.5, {
+                name="luchettisafe1",
+                heading=269,
+                debugPoly=Config.DebugLuchettiPoly,
+                minZ=29.3,
+                maxZ=30.0,
+            }, {
+                    options = {
+                        {
+                            event = "qb-luchettijob:OfficeSafe",
+                            icon = "fas fa-lock",
+                            label = "Safe",
+                            job = "luchetti",
+                            grade = 3
+                        },
+                    },
+                    distance = 1.5
+                })
+
+            exports['qb-target']:AddBoxZone("luchettiwinefridge", vector3(294.67, -975.77, 29.43), 1.5, 1.5, {
                 name="luchettiwinefridge",
                 heading=269,
-                debugPoly=false,
+                debugPoly=Config.DebugLuchettiPoly,
                 minZ=28.0,
-                maxZ=30.0,
+                maxZ=30.5,
             }, {
                     options = {
                         {
@@ -281,11 +300,11 @@ Citizen.CreateThread(function()
                 })
 
 
-        exports['qb-target']:AddBoxZone("luchettimicrowave", vector3(288.71, -985.91, 29.43), 1.8, 0.7, {
+        exports['qb-target']:AddBoxZone("luchettimicrowave", vector3(288.57, -986.36, 29.43), 1.3, 0.6, {
             name="luchettimicrowave",
-            heading=178,
-            debugPoly=false,
-            minZ=28.0,
+            heading=270,
+            debugPoly=Config.DebugLuchettiPoly,
+            minZ=29.4,
             maxZ=30.0,
         }, {
                 options = {
@@ -299,11 +318,11 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-            exports['qb-target']:AddBoxZone("luchettigrill", vector3(288.98, -983.6, 29.43), 1.8, 0.7, {
+            exports['qb-target']:AddBoxZone("luchettigrill", vector3(289.29, -983.86, 30.41), 1.0, 1.6, {
                 name="luchettigrill",
                 heading=268,
-                debugPoly=false,
-                minZ=28.0,
+                debugPoly=Config.DebugLuchettiPoly,
+                minZ=29.0,
                 maxZ=30.0,
             }, {
                     options = {
@@ -317,11 +336,11 @@ Citizen.CreateThread(function()
                     distance = 1.5
                 })
 
-        exports['qb-target']:AddBoxZone("luchettifryer", vector3(285.94, -981.16, 29.43), 1.8, 0.7, {
+        exports['qb-target']:AddBoxZone("luchettifryer", vector3(286.01, -980.43, 29.32), 1.0, 1.5, {
                 name="luchettifryer",
-                heading=1,
-                debugPoly=false,
-                minZ=28.0,
+                heading=0,
+                debugPoly=Config.DebugLuchettiPoly,
+                minZ=29.0,
                 maxZ=30.0,
             }, {
                     options = {
@@ -335,12 +354,12 @@ Citizen.CreateThread(function()
                     distance = 1.5
                 })
 
-        exports['qb-target']:AddBoxZone("luchettichopping", vector3(283.62, -983.72, 29.43), 1.8, 0.7, {
+        exports['qb-target']:AddBoxZone("luchettichopping", vector3(284.39, -983.6, 29.33), 0.7, 1.5, {
                 name="luchettichopping",
-                heading=272,
-                debugPoly=false,
+                heading=270,
+                debugPoly=Config.DebugLuchettiPoly,
                 minZ=28.0,
-                maxZ=30.5,
+                maxZ=29.5,
             }, {
                     options = {
                         {
@@ -353,11 +372,11 @@ Citizen.CreateThread(function()
                     distance = 1.5
                 })  
                 
-                exports['qb-target']:AddBoxZone("luchettipizzaoven", vector3(288.16, -981.42, 29.43), 1.8, 0.7, {
+                exports['qb-target']:AddBoxZone("luchettipizzaoven", vector3(288.16, -981.42, 29.43), 1.0, 1.7, {
                     name="luchettipizzaoven",
-                    heading=6,
-                    debugPoly=false,
-                    minZ=28.0,
+                    heading=356,
+                    debugPoly=Config.DebugLuchettiPoly,
+                    minZ=29.0,
                     maxZ=30.5,
                 }, {
                         options = {
@@ -371,12 +390,12 @@ Citizen.CreateThread(function()
                         distance = 1.5
                     })  
             
-                exports['qb-target']:AddBoxZone("luchettimanagerpc", vector3(288.99, -990.23, 29.43), 1.8, 0.7, {
+                exports['qb-target']:AddBoxZone("luchettimanagerpc", vector3(288.05, -990.23, 29.07), 0.5, 1.2, {
                     name="luchettimanagerpc",
                     heading=90,
-                    debugPoly=false,
-                    minZ=28.0,
-                    maxZ=30.5,
+                    debugPoly=Config.DebugLuchettiPoly,
+                    minZ=29.2,
+                    maxZ=29.9,
                 }, {
                         options = {
                             {
@@ -392,10 +411,10 @@ Citizen.CreateThread(function()
 
         exports['qb-target']:AddBoxZone("LuchettiRegister", vector3(287.35, -977.23, 29.32), 0.5, 0.4, {
             name="LuchettiRegister",
-            debugPoly=false,
+            debugPoly=Config.DebugLuchettiPoly,
             heading=357,
-            minZ=28.5,
-            maxZ=31.5,
+            minZ=29.2,
+            maxZ=29.8,
         }, {
                 options = {
                     {
@@ -409,12 +428,12 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-            exports['qb-target']:AddBoxZone("luchettidessertfridge", vector3(281.96, -985.66, 29.42), 0.5, 0.4, {
+            exports['qb-target']:AddBoxZone("luchettidessertfridge", vector3(282.08, -986.0, 29.39), 1.0, 1.5, {
                 name="luchettidessertfridge",
-                debugPoly=false,
-                heading=88,
-                minZ=29.0,
-                maxZ=32.0,
+                debugPoly=Config.DebugLuchettiPoly,
+                heading=90,
+                minZ=28.5,
+                maxZ=31.0,
             }, {
                     options = {
                         {

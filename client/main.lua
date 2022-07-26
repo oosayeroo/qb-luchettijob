@@ -196,6 +196,15 @@ AddEventHandler("qb-luchettijob:WineFridge", function()
     })
 end)
 
+RegisterNetEvent("qb-luchettijob:OfficeSafe")
+AddEventHandler("qb-luchettijob:OfficeSafe", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "luchettisafe1")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "luchettisafe1", {
+        maxweight = 200000,
+        slots = 40,
+    })
+end)
+
 
 ---drinks menu--------------------
 RegisterNetEvent("qb-luchettijob:Aperitivo")

@@ -24,39 +24,26 @@ AddEventHandler('QBCore:Player:SetPlayerData', function(val)
 end)
 
 Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1000)
-		for k, v in pairs(Config.ScooterPed) do
-			local pos = GetEntityCoords(PlayerPedId())	
-			local dist = #(pos - vector3(v.coords.x, v.coords.y, v.coords.z))
-			
-			if dist < 40 and not pedspawned then
-				TriggerEvent('qb-luchettijob:spawn:ped', v.coords)
-				pedspawned = true
-			end
-			if dist >= 35 then
-				pedspawned = false
-				DeletePed(npc)
-			end
-		end
-	end
-end)
-
-RegisterNetEvent('qb-luchettijob:spawn:ped')
-AddEventHandler('qb-luchettijob:spawn:ped',function(coords)
-	local hash = `s_m_y_busboy_01`
-
-	RequestModel(hash)
-	while not HasModelLoaded(hash) do 
-		Wait(10)
-	end
-
-    	pedspawned = true
-        npc = CreatePed(5, hash, coords.x, coords.y, coords.z - 1.0, coords.w, false, false)
-        FreezeEntityPosition(npc, true)
-        SetBlockingOfNonTemporaryEvents(npc, true)
-        loadAnimDict("amb@world_human_cop_idles@male@idle_b") 
-        TaskPlayAnim(npc, "amb@world_human_cop_idles@male@idle_b", "idle_e", 8.0, 1.0, -1, 17, 0, 0, 0, 0)
+    exports['qb-target']:SpawnPed({
+        model = Config.LuchettiGaragePed,
+        coords = Config.LuchettiGaragePedLocation, 
+        minusOne = true, --may have to change this if your ped is in the ground
+        freeze = true, 
+        invincible = true, 
+        blockevents = true,
+        scenario = 'WORLD_HUMAN_DRUG_DEALER',
+        target = { 
+            options = {
+                {
+                    type="client",
+                    event = "garage:LuchettiGarage",
+                    icon = "fas fa-car",
+                    label = "Mario"
+                }
+            },
+          distance = 2.5,
+        },
+    })
 end)
 
 function loadAnimDict(dict)
@@ -69,9 +56,9 @@ end
 RegisterNetEvent('qb-luchettijob:garage')
 AddEventHandler('qb-luchettijob:garage', function(lj)
     local vehicle = lj.vehicle
-    local coords = vector4(297.87, -997.95, 29.18, 281.11)
+    local coords = Config.SpawnCarLocation
         if PlayerData.job.name == "luchetti" then
-            if vehicle == 'faggio' then		
+            if vehicle == Config.LuchettiVehicleModel then		
                 QBCore.Functions.SpawnVehicle(vehicle, function(veh)
                     SetVehicleNumberPlateText(veh, "PIZZA1"..tostring(math.random(1000, 9999)))
                     exports['LegacyFuel']:SetFuel(veh, 100.0)
@@ -95,19 +82,19 @@ AddEventHandler('qb-luchettijob:storecar', function()
     QBCore.Functions.DeleteVehicle(car)
 end)
 
-RegisterNetEvent('qb-menu:garage:LuchettiGarage', function()
+RegisterNetEvent('garage:LuchettiGarage', function()
     exports['qb-menu']:openMenu({
         {
             header = "| Luchetti Garage |",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            header = "• Faggio",
-            txt = "Delivery Bike",
+            header = Config.LuchettiVehicleModel,
+            txt = "Delivery Vehicle",
             params = {
                 event = "qb-luchettijob:garage",
                 args = {
-                    vehicle = 'faggio',
+                    vehicle = Config.LuchettiVehicleModel,
                 }
             }
         },
@@ -117,9 +104,9 @@ RegisterNetEvent('qb-menu:garage:LuchettiGarage', function()
             txt = "Take a Delivery to Customers House",
             params = {
                 event = "qb-luchettijob:deliveries:StartPizzaRun",
-                --args = {
-                --   
-               -- }
+                args = {
+                   
+                }
             }
         },  
         {
