@@ -403,7 +403,7 @@ QBShared.Jobs = {
 }		
 ```
 
-## Insert into @qb-target - init.lua - config.targetmodels
+## DELETE THIS from @qb-target - init.lua - config.targetmodels IF UPDATING
 ``` 
 ["luchettigarage"] = {
 		models = {

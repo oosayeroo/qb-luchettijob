@@ -1,8 +1,11 @@
 Config = {}
 
-Config.ScooterPed = {
-    {coords = vector4(299.19, -995.03, 29.28, 166.02)},
-}
+Config.DebugLuchettiPoly = true
+
+Config.LuchettiGaragePedLocation = vector4(299.19, -995.03, 29.28, 166.02)
+Config.LuchettiGaragePed = 's_m_m_movprem_01'
+Config.SpawnCarLocation = vector4(297.87, -997.95, 29.18, 281.11)
+Config.LuchettiVehicleModel = 'faggio'
 
 Config.PizzaRunWait = 10000
 Config.PizzaRunPayment = math.random(50, 150)   ---Bank Payment
