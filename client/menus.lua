@@ -1095,45 +1095,6 @@ RegisterNetEvent('qb-menu:StartersMenu', function(data)
     })
 end)
 
-RegisterNetEvent('qb-menu:LuchettiMicrowave', function(data)
-    exports['qb-menu']:openMenu({
-        {
-            
-            header = "| MealPrep |",
-            isMenuHeader = true, 
-        },
-        {
-            
-            header = "• Starters",
-            txt = "Show list of starters",
-            params = {
-                event = "qb-menu:StartersMenu"
-            }
-        },
-        {
-            
-            header = "• Mains",
-            txt = "Show list of mains",
-            params = {
-                event = "qb-menu:MainsMenu"
-            }
-        },
-        {
-            
-            header = "• Desserts",
-            txt = "Show list of desserts",
-            params = {
-                event = "qb-menu:DessertsMenu"
-            }
-        },  
-        {
-            id = 7,
-            header = "Close (ESC)",
-            isMenuHeader = true, 
-        },
-    })
-end)
-
 RegisterNetEvent('qb-menu:LuchettiGrill', function(data)
     exports['qb-menu']:openMenu({
         {
