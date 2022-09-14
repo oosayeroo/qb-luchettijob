@@ -1,6 +1,6 @@
 Config = {}
 
-Config.DebugLuchettiPoly = true
+Config.DebugLuchettiPoly = false
 
 Config.LuchettiGaragePedLocation = vector4(299.19, -995.03, 29.28, 166.02)
 Config.LuchettiGaragePed = 's_m_m_movprem_01'
@@ -9,6 +9,17 @@ Config.LuchettiVehicleModel = 'faggio'
 
 Config.PizzaRunWait = 10000
 Config.PizzaRunPayment = math.random(50, 150)   ---Bank Payment
+
+----///////////ITEM AMOUNTS///////////---------------
+Config.GlassBoxAmount = 10 --amount of drinks glass to get from opening 1 box
+Config.TomatoBoxAmount = 20 --amount of tomatoes to get from 1 box
+Config.MeatTrayAmount = 5 --amount of each meat to get when opening 1 box
+Config.SaladBoxAmount = 5 --amount of salad to get from 1 box
+Config.PotatoSackAmount = 20 --amount of products to get from potato sack
+Config.PotatoChipsAmount = 10 --amount of potato chips to get when cooking
+Config.TomSliceAmount = 5 --amount of slices to get from 1 tomato
+Config.CheeseWheelAmount = 6 --amount of cheese pieces from 1 cheese wheel
+Config.MeatballAmount = 4 --amount of meatballs to get from cooking 1
 
 Config.PizzaDelivery1 = vector3(-297.74, 379.84, 112.1)
 Config.PizzaDelivery2 = vector3(119.37, 564.19, 183.96)
