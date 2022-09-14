@@ -222,8 +222,7 @@ AddEventHandler("qb-luchettijob:Aperitivo", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "drinks-glass", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "aperitivo", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingaperitivo')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["aperitivo"], "add")
                     			QBCore.Functions.Notify("You made Aperitivo", "success")
 				end, function()
@@ -253,8 +252,7 @@ AddEventHandler("qb-luchettijob:Negroni", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "drinks-glass", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "negroni", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingnegroni')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["negroni"], "add")
                     			QBCore.Functions.Notify("You made Negroni", "success")
 				end, function()
@@ -284,8 +282,7 @@ AddEventHandler("qb-luchettijob:Campari", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "drinks-glass", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "campari", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingcampari')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["campari"], "add")
                     			QBCore.Functions.Notify("You made Campari", "success")
 				end, function()
@@ -315,8 +312,7 @@ AddEventHandler("qb-luchettijob:Americano", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "drinks-glass", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "americano", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingamericano')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["americano"], "add")
                     			QBCore.Functions.Notify("You made Americano", "success")
 				end, function()
@@ -346,8 +342,7 @@ AddEventHandler("qb-luchettijob:Bellini", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "drinks-glass", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "bellini", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingbellini')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bellini"], "add")
                     			QBCore.Functions.Notify("You made Bellini", "success")
 				end, function()
@@ -377,8 +372,7 @@ AddEventHandler("qb-luchettijob:Spritz", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "drinks-glass", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "spritz", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingspritz')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["spritz"], "add")
                     			QBCore.Functions.Notify("You made Spritz", "success")
 				end, function()
@@ -410,9 +404,7 @@ AddEventHandler("qb-luchettijob:MakeBreadstick", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "bread", 1)
-                    			TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "breadsticks", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingbreadsticks')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["breadsticks"], "add")
                     			QBCore.Functions.Notify("You made a meal", "success")
 				end, function()
@@ -442,9 +434,7 @@ AddEventHandler("qb-luchettijob:MakeMozzarellaCarrozza", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "cheese", 1)
-                    			TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "mozzarella-carrozza", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingmozzarella')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["mozarella-carrozza"], "add")
                     			QBCore.Functions.Notify("You made Mozzarella In Carrozza", "success")
 				end, function()
@@ -474,9 +464,7 @@ AddEventHandler("qb-luchettijob:MakePolpette", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "meatballs", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "polpette-della-nonna", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingpolpette')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["polpette-della-nonna"], "add")
                     			QBCore.Functions.Notify("You made Polpette Della Nonna", "success")
 				end, function()
@@ -506,10 +494,7 @@ AddEventHandler("qb-luchettijob:MakeGarlicBread", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "bread", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "garlic", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "garlic-bread", 1)
+					TriggerServerEvent('qb-luchettijob:server:makinggarlicbread')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["garlic-bread"], "add")
                     			QBCore.Functions.Notify("You made Garlic Bread", "success")
 				end, function()
@@ -539,10 +524,7 @@ AddEventHandler("qb-luchettijob:MakePrawnCocktail", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "prawns", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "pcocktail-sauce", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "salad", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "prawn-cocktail", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingcocktail')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["prawn-cocktail"], "add")
                     			QBCore.Functions.Notify("You made Prawn Cocktail", "success")
 				end, function()
@@ -575,10 +557,7 @@ AddEventHandler("qb-luchettijob:MakeMargherita", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "cheese", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-                    TriggerServerEvent('QBCore:Server:RemoveItem', "dough", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "margherita-pizza", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingpizza1')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["margherita-pizza"], "add")
                     			QBCore.Functions.Notify("You made a Margherita Pizza", "success")
 				end, function()
@@ -608,10 +587,7 @@ AddEventHandler("qb-luchettijob:MakePepperoni", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "cheese", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "pepperoni", 1)
-                    TriggerServerEvent('QBCore:Server:RemoveItem', "dough", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "pepperoni-pizza", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingpizza2')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["pepperoni-pizza"], "add")
                     			QBCore.Functions.Notify("You made a Pepperoni Pizza", "success")
 				end, function()
@@ -641,10 +617,7 @@ AddEventHandler("qb-luchettijob:MakeHawaiian", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "cheese", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "pineapple", 1)
-                    TriggerServerEvent('QBCore:Server:RemoveItem', "dough", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "hawaiian-pizza", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingpizza3')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["hawaiian-pizza"], "add")
                     			QBCore.Functions.Notify("You made a Hawaiian Pizza", "success")
 				end, function()
@@ -674,10 +647,7 @@ AddEventHandler("qb-luchettijob:MakeVegetablePizza", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "salad", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-                    TriggerServerEvent('QBCore:Server:RemoveItem', "dough", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "vegetable-pizza", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingpizza4')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["vegetable-pizza"], "add")
                     			QBCore.Functions.Notify("You made a Vegetable Pizza", "success")
 				end, function()
@@ -709,11 +679,7 @@ AddEventHandler("qb-luchettijob:MakeFiorentina", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "beef-steak", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "salad", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "fries", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-slice", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "fiorentina", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingfiorentina')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fiorentina"], "add")
                     			QBCore.Functions.Notify("You made a plate of Fiorentina", "success")
 				end, function()
@@ -743,11 +709,7 @@ AddEventHandler("qb-luchettijob:MakeVealMilanese", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "veal-steak", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "pasta", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "salad", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-slice", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "veal-milanese", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingmilanese')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["veal-milanese"], "add")
                     			QBCore.Functions.Notify("You made a Veal Milanese", "success")
 				end, function()
@@ -777,9 +739,7 @@ AddEventHandler("qb-luchettijob:MakeRavioli", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "pasta", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-puree", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "ravioli", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingravioli')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ravioli"], "add")
                     			QBCore.Functions.Notify("You made a Ravioli Dish", "success")
 				end, function()
@@ -809,9 +769,7 @@ AddEventHandler("qb-luchettijob:MakeCarbonara", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "pasta", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "cream-sauce", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "spaghetti-carbonara", 1)
+					TriggerServerEvent('qb-luchettijob:server:makingcarbonara')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["spaghetti-carbonara"], "add")
                     			QBCore.Functions.Notify("You made Spaghetti Carbonara", "success")
 				end, function()
@@ -830,44 +788,42 @@ end)
 
 RegisterNetEvent("qb-luchettijob:Open-Box")
 AddEventHandler("qb-luchettijob:Open-Box", function()
-		TriggerServerEvent('QBCore:Server:RemoveItem', "glass-box", 1)
-		TriggerServerEvent('QBCore:Server:AddItem', "drinks-glass", 10)
+		TriggerServerEvent('qb-luchettijob:server:opendrinks')
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["drinks-glass"], "add")
 end)
 
 RegisterNetEvent("qb-luchettijob:Open-Tomato-Box")
 AddEventHandler("qb-luchettijob:Open-Tomato-Box", function()
-		TriggerServerEvent('QBCore:Server:RemoveItem', "tomato-box", 1)
-		TriggerServerEvent('QBCore:Server:AddItem', "tomato", 20)
+		TriggerServerEvent('qb-luchettijob:server:opentombox')
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tomato"], "add")
 end)
 
 RegisterNetEvent("qb-luchettijob:Open-Meat-Tray")
 AddEventHandler("qb-luchettijob:Open-Meat-Tray", function()
-		TriggerServerEvent('QBCore:Server:RemoveItem', "meat-tray", 1)
-		TriggerServerEvent('QBCore:Server:AddItem', "beef-patty", 5)
-		TriggerServerEvent('QBCore:Server:AddItem', "veal-patty", 5)
-		TriggerServerEvent('QBCore:Server:AddItem', "uncooked-meatballs", 5)
-		TriggerServerEvent('QBCore:Server:AddItem', "prawns", 5)
+		TriggerServerEvent('qb-luchettijob:server:openmeattray')
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["beaf-patty"], "add")
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["veal-patty"], "add")
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["uncooked-meatballs"], "add")
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["prawns"], "add")
 end)
 
 RegisterNetEvent("qb-luchettijob:Open-Salad-Box")
 AddEventHandler("qb-luchettijob:Open-Salad-Box", function()
-		TriggerServerEvent('QBCore:Server:RemoveItem', "salad-box", 1)
-		TriggerServerEvent('QBCore:Server:AddItem', "garlic", 5)
-	    TriggerServerEvent('QBCore:Server:AddItem', "salad", 10)
-		TriggerServerEvent('QBCore:Server:AddItem', "bread", 5)
+		TriggerServerEvent('qb-luchettijob:server:opensaladbox')
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["garlic"], "add")
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["salad"], "add")
+		TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bread"], "add")
 end)
 
 
 RegisterNetEvent("qb-luchettijob:PrepFries")
 AddEventHandler("qb-luchettijob:PrepFries", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+    if QBCore.Functions.HasItem('potato-sack') then
            PrepFries()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'potato-sack')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -876,13 +832,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeFries")
 AddEventHandler("qb-luchettijob:MakeFries", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+   if QBCore.Functions.HasItem('uncooked-fries') then
            MakeFries()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'uncooked-fries')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -891,13 +845,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeMashedPotato")
 AddEventHandler("qb-luchettijob:MakeMashedPotato", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+    if QBCore.Functions.HasItem('potato-sack') then
            MakeMashedPotato()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'potato-sack')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -906,13 +858,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeChips")
 AddEventHandler("qb-luchettijob:MakeChips", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+    if QBCore.Functions.HasItem('uncooked-fries') then
            MakeChips()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'uncooked-fries')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -921,13 +871,11 @@ end)
 RegisterNetEvent("qb-luchettijob:ChopTomato")
 AddEventHandler("qb-luchettijob:ChopTomato", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+    if QBCore.Functions.HasItem('tomato') then
            ChopTomato()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'tomato')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -936,13 +884,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeTomatoPuree")
 AddEventHandler("qb-luchettijob:MakeTomatoPuree", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+    if QBCore.Functions.HasItem('tomato') then
             MakeTomatoPuree()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'tomato')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -951,13 +897,11 @@ end)
 RegisterNetEvent("qb-luchettijob:ChopCheese")
 AddEventHandler("qb-luchettijob:ChopCheese", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('cheese-wheel') then
             ChopCheese()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'cheese-wheel')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -966,13 +910,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeBeefSteak")
 AddEventHandler("qb-luchettijob:MakeBeefSteak", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('beef-patty') then
            MakeBeefSteak()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'beef-patty')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -982,13 +924,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeVealSteak")
 AddEventHandler("qb-luchettijob:MakeVealSteak", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('veal-patty') then
            MakeVealSteak()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'veal-patty')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -997,13 +937,11 @@ end)
 RegisterNetEvent("qb-luchettijob:MakeMeatballs")
 AddEventHandler("qb-luchettijob:MakeMeatballs", function()
     if onDuty then
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
-        if HasItem then
+		if QBCore.Functions.HasItem('uncooked-meatballs') then
            MakeMeatballs()
         else
             QBCore.Functions.Notify("You don't have the right stuff..", "error")
         end
-      end, 'uncooked-meatballs')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -1023,7 +961,7 @@ AddEventHandler("qb-luchettijob:Gelato", function()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "gelato", 1)
+	TriggerServerEvent('qb-luchettijob:server:givegelato')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["gelato"], "add")
 	QBCore.Functions.Notify("Whipped up some Gelato", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
@@ -1043,7 +981,7 @@ AddEventHandler("qb-luchettijob:FudgeCake", function()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "fudge-cake", 1)
+	TriggerServerEvent('qb-luchettijob:server:givefudge')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fudge-cake"], "add")
 	QBCore.Functions.Notify("Made some Fudge Cake", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
@@ -1063,7 +1001,7 @@ AddEventHandler("qb-luchettijob:Tiramisu", function()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "tiramisu", 1)
+	TriggerServerEvent('qb-luchettijob:server:givetiramisu')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tiramisu"], "add")
 	QBCore.Functions.Notify("Whipped up some Tiramisu", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
@@ -1083,7 +1021,7 @@ AddEventHandler("qb-luchettijob:Cheesecake", function()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "cheesecake", 1)
+	TriggerServerEvent('qb-luchettijob:server:givecheesecake')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cheesecake"], "add")
 	QBCore.Functions.Notify("Whipped up some Cheesecake", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
@@ -1103,7 +1041,7 @@ AddEventHandler("qb-luchettijob:PannaCotta", function()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "panna-cotta", 1)
+	TriggerServerEvent('qb-luchettijob:server:givepanna')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["panna-cotta"], "add")
 	QBCore.Functions.Notify("Whipped up some Panna Cotta", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
@@ -1111,7 +1049,6 @@ end)
 
 -- Functions --
 function PrepFries()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "potato-sack", 1)
 	QBCore.Functions.Progressbar("pickup", "Chopping Potatoes..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1124,14 +1061,13 @@ function PrepFries()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "uncooked-fries", 5)
+	TriggerServerEvent('qb-luchettijob:server:prepfries')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["uncooked-fries"], "add")
 	QBCore.Functions.Notify("Prepped Some Fries", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeFries()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "uncooked-fries", 1)
 	QBCore.Functions.Progressbar("pickup", "Frying..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1144,14 +1080,13 @@ function MakeFries()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "fries", 5)
+	TriggerServerEvent('qb-luchettijob:server:makefries')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fries"], "add")
 	QBCore.Functions.Notify("Made Some Fries", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeChips()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "uncooked-fries", 1)
 	QBCore.Functions.Progressbar("pickup", "Making Chips..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1164,14 +1099,13 @@ function MakeChips()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "potato-chips", 10)
+	TriggerServerEvent('qb-luchettijob:server:makechips')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["potato-chips"], "add")
 	QBCore.Functions.Notify("Made Some Chips", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeMashedPotato()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "potato-sack", 1)
 	QBCore.Functions.Progressbar("pickup", "Mashing The Potatoes..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1184,14 +1118,13 @@ function MakeMashedPotato()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "mashed-potato", 3)
+	TriggerServerEvent('qb-luchettijob:server:makemash')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["mashed-potato"], "add")
 	QBCore.Functions.Notify("Mashed Some Potatoes", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function ChopTomato()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "tomato", 1)
 	QBCore.Functions.Progressbar("pickup", "Chopping Tomato..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1204,14 +1137,13 @@ function ChopTomato()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "tomato-slice", 5)
+	TriggerServerEvent('qb-luchettijob:server:maketomslice')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tomato-slice"], "add")
 	QBCore.Functions.Notify("You Chopped a Tomato", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeTomatoPuree()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "tomato", 1)
 	QBCore.Functions.Progressbar("pickup", "Making Tomato Puree..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1224,14 +1156,13 @@ function MakeTomatoPuree()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "tomato-puree", 1)
+	TriggerServerEvent('qb-luchettijob:server:makepuree')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tomato-puree"], "add")
 	QBCore.Functions.Notify("You Made Some Tomato Puree", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function ChopCheese()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "cheese-wheel", 1)
 	QBCore.Functions.Progressbar("pickup", "Chopping Cheese Block..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1244,14 +1175,13 @@ function ChopCheese()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "cheese", 10)
+	TriggerServerEvent('qb-luchettijob:server:chopcheese')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cheese"], "add")
 	QBCore.Functions.Notify("Chopped up Cheese", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeBeefSteak()
-	TriggerServerEvent('QBCore:Server:RemoveItem', "beef-patty", 1)
 	QBCore.Functions.Progressbar("pickup", "Grilling a Steak..", 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
@@ -1264,7 +1194,7 @@ function MakeBeefSteak()
 	    }
 	)
 	Citizen.Wait(4000)
-	TriggerServerEvent('QBCore:Server:AddItem', "beef-steak", 1)
+	TriggerServerEvent('qb-luchettijob:server:makebsteak')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["beef-steak"], "add")
 	QBCore.Functions.Notify("You Grilled a Beef Steak", "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
@@ -1272,7 +1202,6 @@ end
 
 
 function MakeVealSteak()
-    TriggerServerEvent('QBCore:Server:RemoveItem', "veal-patty", 1)
     QBCore.Functions.Progressbar("pickup", "Grilling a Steak..", 4000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
@@ -1285,14 +1214,13 @@ function MakeVealSteak()
     }    
 )
     Citizen.Wait(4000)
-    TriggerServerEvent('QBCore:Server:AddItem', "veal-steak", 1)
+    TriggerServerEvent('qb-luchettijob:server:makevsteak')
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["veal-steak"], "add")
     QBCore.Functions.Notify("You Grilled a Veal Steak", "success")
     StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeMeatballs()
-    TriggerServerEvent('QBCore:Server:RemoveItem', "uncooked-meatballs", 1)
     QBCore.Functions.Progressbar("pickup", "Making some Meatballs..", 4000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
@@ -1305,7 +1233,7 @@ function MakeMeatballs()
     }    
 )
     Citizen.Wait(4000)
-    TriggerServerEvent('QBCore:Server:AddItem', "meatballs", 1)
+    TriggerServerEvent('qb-luchettijob:server:makemeatball')
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["meatballs"], "add")
     QBCore.Functions.Notify("You Made Some Meatballs", "success")
     StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
