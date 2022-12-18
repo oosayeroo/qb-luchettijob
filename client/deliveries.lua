@@ -2,22 +2,29 @@ local QBCore = exports['qb-core']:GetCoreObject()
 isLoggedIn = false
 local onDuty = true
 PlayerJob = {}
+local pizzaDrop = 0
+local deliveryamount = Config.PizzaJobs
+local haspizzarun = false
 
 RegisterNetEvent('qb-luchettijob:deliveries:StartPizzaRun', function()
-    TriggerEvent('animations:client:EmoteCommandStart', {"argue"})
-    QBCore.Functions.Progressbar('falar_empregada', 'Getting Delivery...', 5000, false, true, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {}, {}, {}, function()
-    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-    QBCore.Functions.Notify('You Accepted a delivery! Take it to the customers house!', 'primary', 7500)
-    
-    Wait(Config.PizzaRunWait)
-    TriggerServerEvent('qb-luchettijob:server:GetPizzaItem')
-    startpizzarun()
-    end)
+    if not haspizzarun then
+        TriggerEvent('animations:client:EmoteCommandStart', {"argue"})
+        QBCore.Functions.Progressbar('falar_empregada', 'Getting Delivery...', 5000, false, true, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {}, {}, {}, function()
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        QBCore.Functions.Notify('You Accepted a delivery! Take it to the customers house!', 'primary', 7500)
+        
+        Wait(Config.PizzaRunWait)
+        TriggerServerEvent('qb-luchettijob:server:GetPizzaItem', deliveryamount)
+        startpizzarun()
+        end)
+    else
+        QbCore.Functions.Notify('You already have Some Deliveries', 'error', 2500)
+    end
 end)
 
 RegisterNetEvent('qb-luchettijob:deliveries:KnockDoor', function()
@@ -29,23 +36,10 @@ RegisterNetEvent('qb-luchettijob:deliveries:KnockDoor', function()
         disableCombat = true,
     }, {}, {}, {}, function()
     QBCore.Functions.Notify('Delivery Successful, Take the receipt back', 'primary', 7500)
-
     TriggerServerEvent('qb-luchettijob:server:KnockDoor')
+    startpizzarun()
     end)
 end)
-
---[[RegisterNetEvent('qb-luchettijob:deliveries:CashReceipt', function()
-    TriggerEvent('animations:client:EmoteCommandStart', {"type"})
-    QBCore.Functions.Progressbar('falar_empregada', 'Filing Invoice...', 5000, false, true, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {}, {}, {}, function()
-
-        TriggerServerEvent('qb-luchettijob:server:CashReceipt')
-    end)
-end) ]]
 
 RegisterNetEvent("qb-luchettijob:deliveries:CashReceipt")
 AddEventHandler("qb-luchettijob:deliveries:CashReceipt", function()
@@ -69,7 +63,7 @@ AddEventHandler("qb-luchettijob:deliveries:CashReceipt", function()
 					QBCore.Functions.Notify("Cancelled..", "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to do this", "error")
+   				QBCore.Functions.Notify("You need a receipt for that", "error")
 			end
 		end)
 	else 
@@ -78,217 +72,28 @@ AddEventHandler("qb-luchettijob:deliveries:CashReceipt", function()
 end)
 
 function startpizzarun()
-    local prob = math.random(1, 10)
-
-    if prob == 1 then
-        SetNewWaypoint(Config.PizzaDelivery1)
-        startpizzarun1()
-    elseif prob == 2 then
-        SetNewWaypoint(Config.PizzaDelivery2)
-        startpizzarun2()
-    elseif prob == 3 then
-        SetNewWaypoint(Config.PizzaDelivery3)
-        startpizzarun3()
-    elseif prob == 4 then
-        SetNewWaypoint(Config.PizzaDelivery4)
-        startpizzarun4()
-    elseif prob == 5 then
-        SetNewWaypoint(Config.PizzaDelivery5)
-        startpizzarun5()
-    elseif prob == 6 then
-        SetNewWaypoint(Config.PizzaDelivery6)
-        startpizzarun6()
-    elseif prob == 7 then
-        SetNewWaypoint(Config.PizzaDelivery7)
-        startpizzarun7()
-    elseif prob == 8 then
-        SetNewWaypoint(Config.PizzaDelivery8)
-        startpizzarun8()
-    elseif prob == 9 then
-        SetNewWaypoint(Config.PizzaDelivery9)
-        startpizzarun9()
-    elseif prob == 10 then
-        SetNewWaypoint(Config.PizzaDelivery10)
-        startpizzarun10()
+    if pizzaDrop < deliveryamount then
+        local prob = Config.PizzaDeliverySpots[math.random(1, #Config.PizzaDeliverySpots)]
+            exports['qb-target']:AddBoxZone("pizzarun1", prob, 3, 3, {
+                name="pizzarun1",
+                heading=0,
+                debugpoly = Config.DebugLuchettiPoly,
+            }, {
+                options = {
+                {
+                    event = "qb-luchettijob:deliveries:KnockDoor",
+                    icon = "far fa-pizza-slice",
+                    label = "Knock Door",
+                    item = "pizza-delivery",
+                },
+            },
+            distance = 2.5
+        })
+        SetNewWaypoint(prob)
+        pizzaDrop = pizzaDrop + 1
+    else
+        QBCore.Functions.Notify('You Have Delivered All Pizzas', 'info', 5000)
+        pizzaDrop = 0
+        haspizzarun = false
     end
-end
-
-function startpizzarun1()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery1, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun2()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery2, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun3()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery3, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun4()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery4, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun5()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery5, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun6()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery6, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun7()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery7, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun8()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery8, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun9()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery9, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
-end
-
-function startpizzarun10()
-    exports['qb-target']:AddBoxZone("pizza-delivery", Config.PizzaDelivery10, 1, 1, {
-        name="pizza-delivery",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-            event = "qb-luchettijob:deliveries:KnockDoor",
-            icon = "far fa-box",
-            label = "Knock Door",
-            item = "pizza-delivery",
-            },
-        },
-        distance = 2.5
-    })
 end

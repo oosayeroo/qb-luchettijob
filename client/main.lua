@@ -200,11 +200,19 @@ RegisterNetEvent("qb-luchettijob:OfficeSafe")
 AddEventHandler("qb-luchettijob:OfficeSafe", function()
     TriggerEvent("inventory:client:SetCurrentStash", "luchettisafe1")
     TriggerServerEvent("inventory:server:OpenInventory", "stash", "luchettisafe1", {
-        maxweight = 200000,
+        maxweight = 500000,
         slots = 40,
     })
 end)
 
+RegisterNetEvent("qb-luchettijob:DownstairsSafe")
+AddEventHandler("qb-luchettijob:DownstairsSafe", function()
+    TriggerEvent("inventory:client:SetCurrentStash", "luchettisafe2")
+    TriggerServerEvent("inventory:server:OpenInventory", "stash", "luchettisafe2", {
+        maxweight = 1000000,
+        slots = 50,
+    })
+end)
 
 ---drinks menu--------------------
 RegisterNetEvent("qb-luchettijob:Aperitivo")
@@ -1243,6 +1251,10 @@ end
 
 RegisterNetEvent("qb-luchettijob:shop")
 AddEventHandler("qb-luchettijob:shop", function()
-    TriggerServerEvent("inventory:server:OpenInventory", "shop", "luchetti", Config.Items)
+	if Config.ShopStyle == 'jim' then
+    	TriggerServerEvent("jim-shops:ShopOpen", "shop", "luchetti", Config.Items)
+	elseif Config.ShopStyle == 'qb' then
+		TriggerServerEvent("inventory:server:OpenInventory", "shop", "luchetti", Config.Items)
+	end
 end)
 
