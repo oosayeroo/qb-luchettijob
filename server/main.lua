@@ -1,5 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-
+local Loc = Locale[Config.Lang]
 
 RegisterServerEvent("qb-luchettijob:bill:player")
 AddEventHandler("qb-luchettijob:bill:player", function(playerId, amount)
@@ -18,19 +18,19 @@ AddEventHandler("qb-luchettijob:bill:player", function(playerId, amount)
                             ['sendercitizenid'] = biller.PlayerData.citizenid
                         })
                         TriggerClientEvent('qs-smartphonephone:RefreshPhone', billed.PlayerData.source)
-                        TriggerClientEvent('QBCore:Notify', source, 'Invoice Successfully Sent', 'success')
-                        TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, 'New Invoice Received')
+                        TriggerClientEvent('QBCore:Notify', source, Loc.success['sentinvoice'], 'success')
+                        TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, Loc.general['gotinvoice'])
                     else
-                        TriggerClientEvent('QBCore:Notify', source, 'Must Be A Valid Amount Above 0', 'error')
+                        TriggerClientEvent('QBCore:Notify', source, Loc.error['abovezero'], 'error')
                     end
                 else
-                    TriggerClientEvent('QBCore:Notify', source, 'You Cannot Bill Yourself', 'error')
+                    TriggerClientEvent('QBCore:Notify', source, Loc.error['billself'], 'error')
                 end
             else
-                TriggerClientEvent('QBCore:Notify', source, 'Player Not Online', 'error')
+                TriggerClientEvent('QBCore:Notify', source, Loc.error['notonline'], 'error')
             end
         else
-            TriggerClientEvent('QBCore:Notify', source, 'No Access', 'error')
+            TriggerClientEvent('QBCore:Notify', source, Loc.error['nojob'], 'error')
         end
 end)
 
@@ -102,10 +102,9 @@ RegisterNetEvent('qb-luchettijob:server:CashReceipt', function()
                 if ReceiptWorth[Player.PlayerData.items[k].name] ~= nil then
                     price = price + (ReceiptWorth[Player.PlayerData.items[k].name] * Player.PlayerData.items[k].amount)
                     Player.Functions.RemoveItem(Player.PlayerData.items[k].name, Player.PlayerData.items[k].amount, k)
-
                     Player.Functions.AddMoney("bank", price)
                     TriggerClientEvent('QBCore:Notify', src, "You Cashed all receipts for $"..price)
-            end
+                end
             end
         end
     else
