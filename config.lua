@@ -1,7 +1,8 @@
 Config = {}
+Locale = {}
 
 Config = {
-    Lang = 'en' --check readme for instruction on translating to your language. 
+    Lang = 'en', --check readme for instruction on translating to your language. 
     DebugLuchettiPoly = false,
     ShopStyle = 'qb', --qb, jim
     LuchettiGaragePedLocation = vector4(299.19, -995.03, 29.28, 166.02),
