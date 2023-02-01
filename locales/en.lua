@@ -53,20 +53,17 @@ Locale['en'] = {
         ['invoice'] = "Send an Invoice",
         ['potato'] = "Potato",
         ['tomato'] = "Tomato",
-
         ['luchettimenu'] = "Luchetti Menu",
         ['straters'] = "Starters",
         ['mains'] = "Mains",
         ['desserts'] = "Desserts",
         ['pizzas'] = "Pizzas",
         ['drinks'] = "Drinks",
-
         ['orderstock'] = "Order Stock",
         ['placeorder'] = "Place an Order",
         ['cashreceipt'] = "Cash Receipt",
         ['manage'] = "Manage Business",
         ['createreceipt'] = "Create Receipt",
         ['bill'] = "Bill",
-    }
-
+    },
 }
