@@ -7,7 +7,11 @@ Discord - https://discord.gg/3WYz3zaqG5
 
 - Please make sure u use the latest dependencies aswell as core for this in order to work.
 
-- This Job has been tested on the latest build as of 08/6/22.
+- This Job has been tested on the latest build as of 1/2/23.
+
+- If you want to make a new locale for your language please copy the en.lua and add your prefix(fr/ge/dm) the locales folder and edit to your language. i would appreciate any translation that are either posted in my discord or added through PR.
+
+- if wanting to use my faggioluchetti (WIP) then place that folder with the rest of your vehicles. however you have them set out. 
 
 
 ## Dependencies :
@@ -401,24 +405,4 @@ QBShared.Jobs = {
         },
 	},
 }		
-```
-
-## DELETE THIS from @qb-target - init.lua - config.targetmodels IF UPDATING
-``` 
-["luchettigarage"] = {
-		models = {
-			"s_m_y_busboy_01"
-		},
-		options = {
-			{
-				type = "client",
-				event = "qb-menu:garage:LuchettiGarage",
-				icon = "fas fa-bike",
-				label = "Mario",
-				job = "luchetti",
-			}
-		},
-		distance = 2.5,
-	},
-
 ```

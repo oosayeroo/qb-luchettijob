@@ -3,10 +3,11 @@ game 'gta5'
 
 author 'oosayeroo'   
 description 'qb-luchettijob by oosayeroo'
-version '1.5.0'
+version '1.6.2'
 
 shared_scripts {
-    'config.lua'
+    'config.lua',
+	'locales/*.lua'
 }
 
 client_scripts {

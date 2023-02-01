@@ -1,12 +1,14 @@
 Config = {}
 
 Config = {
+    Lang = 'en' --check readme for instruction on translating to your language. 
     DebugLuchettiPoly = false,
-    ShopStyle = 'jim', --qb, jim
+    ShopStyle = 'qb', --qb, jim
     LuchettiGaragePedLocation = vector4(299.19, -995.03, 29.28, 166.02),
     LuchettiGaragePed = 's_m_m_movprem_01',
     SpawnCarLocation = vector4(297.87, -997.95, 29.18, 281.11),
-    LuchettiVehicleModel = 'faggio',
+    LuchettiVehicleModel = 'faggioluchetti',
+    BikePlate = "PIZZABOI",
 
     PizzaRunWait = 10000,
     PizzaRunPayment = math.random(25, 60),   --Bank Payment
