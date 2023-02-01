@@ -3,6 +3,7 @@ PlayerData = {}
 local pedspawned = false
 local onDuty = true
 PlayerJob = {}
+local Loc = Locale[Config.Lang]
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 function QBCore.Functions.GetPlayerData(cb)
@@ -57,25 +58,25 @@ RegisterNetEvent('qb-luchettijob:garage')
 AddEventHandler('qb-luchettijob:garage', function(lj)
     local vehicle = lj.vehicle
     local coords = Config.SpawnCarLocation
-        if PlayerData.job.name == "luchetti" then
-            if vehicle == Config.LuchettiVehicleModel then		
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    SetVehicleNumberPlateText(veh, "PIZZA1"..tostring(math.random(1000, 9999)))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                    SetEntityHeading(veh, coords.w)
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    SetVehicleEngineOn(veh, true, true)
-                end, coords, true)
-            end
-        else
-            QBCore.Functions.Notify('You are not an employee of Luchetti.', 'error')
+    if PlayerData.job.name == "luchetti" then
+        if vehicle == Config.LuchettiVehicleModel then		
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                SetVehicleNumberPlateText(veh, Config.BikePlate..tostring(math.random(1000, 9999)))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+                SetEntityHeading(veh, coords.w)
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                SetVehicleEngineOn(veh, true, true)
+            end, coords, true)
         end
+    else
+        QBCore.Functions.Notify(Loc.error['nojob'], 'error')
+    end
 end)
 
 RegisterNetEvent('qb-luchettijob:storecar')
 AddEventHandler('qb-luchettijob:storecar', function()
-    QBCore.Functions.Notify('Vehicle Stored!')
+    QBCore.Functions.Notify(Loc.success['storeveh'])
     local car = GetVehiclePedIsIn(PlayerPedId(),true)
     NetworkFadeOutEntity(car, true,false)
     Citizen.Wait(2000)
@@ -85,12 +86,12 @@ end)
 RegisterNetEvent('garage:LuchettiGarage', function()
     exports['qb-menu']:openMenu({
         {
-            header = "| Luchetti Garage |",
+            header = "| Luchetti "..Loc.general['garage'].." |",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
             header = Config.LuchettiVehicleModel,
-            txt = "Delivery Vehicle",
+            txt = Loc.general['delveh'],
             params = {
                 event = "qb-luchettijob:garage",
                 args = {
@@ -100,8 +101,8 @@ RegisterNetEvent('garage:LuchettiGarage', function()
         },
         {
             
-            header = "• Take Delivery",
-            txt = "Take a Delivery to Customers House",
+            header = Loc.general['takedel'],
+            txt = Loc.general['takehouse'],
             params = {
                 event = "qb-luchettijob:deliveries:StartPizzaRun",
                 args = {
@@ -110,8 +111,8 @@ RegisterNetEvent('garage:LuchettiGarage', function()
             }
         },  
         {
-            header = "• Store Vehicle",
-            txt = "Store Vehicle Inside Garage",
+            header = Loc.general['storeveh'],
+            txt = Loc.general['storeveh'],
             params = {
                 event = "qb-luchettijob:storecar",
                 args = {
@@ -120,7 +121,7 @@ RegisterNetEvent('garage:LuchettiGarage', function()
             }
         },	
         {
-            header = "Close (ESC)",
+            header = Loc.general['close']" (ESC)",
             isMenuHeader = true,
         },	
     })

@@ -5,37 +5,38 @@ PlayerJob = {}
 local pizzaDrop = 0
 local deliveryamount = Config.PizzaJobs
 local haspizzarun = false
+local Loc = Locale[Config.Lang]
 
 RegisterNetEvent('qb-luchettijob:deliveries:StartPizzaRun', function()
     if not haspizzarun then
         TriggerEvent('animations:client:EmoteCommandStart', {"argue"})
-        QBCore.Functions.Progressbar('falar_empregada', 'Getting Delivery...', 5000, false, true, {
+        QBCore.Functions.Progressbar('falar_empregada', Loc.general['getdel'], 5000, false, true, {
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function()
         TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-        QBCore.Functions.Notify('You Accepted a delivery! Take it to the customers house!', 'primary', 7500)
+        QBCore.Functions.Notify(Loc.success['gotdel'], 'primary', 7500)
         
         Wait(Config.PizzaRunWait)
         TriggerServerEvent('qb-luchettijob:server:GetPizzaItem', deliveryamount)
         startpizzarun()
         end)
     else
-        QbCore.Functions.Notify('You already have Some Deliveries', 'error', 2500)
+        QbCore.Functions.Notify(Loc.error['hasdel'], 'error', 2500)
     end
 end)
 
 RegisterNetEvent('qb-luchettijob:deliveries:KnockDoor', function()
     TriggerEvent('animations:client:EmoteCommandStart', {"knock"})
-    QBCore.Functions.Progressbar('falar_empregada', 'Knocking Door...', 5000, false, true, {
+    QBCore.Functions.Progressbar('falar_empregada', Loc.general['knock'], 5000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
         disableCombat = true,
     }, {}, {}, {}, function()
-    QBCore.Functions.Notify('Delivery Successful, Take the receipt back', 'primary', 7500)
+    QBCore.Functions.Notify(Loc.success['donedel'], 'primary', 7500)
     TriggerServerEvent('qb-luchettijob:server:KnockDoor')
     startpizzarun()
     end)
@@ -46,7 +47,7 @@ AddEventHandler("qb-luchettijob:deliveries:CashReceipt", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ReceiptCheck', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Filing Invoice..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['filereceipt'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -58,16 +59,16 @@ AddEventHandler("qb-luchettijob:deliveries:CashReceipt", function()
 				}, {}, {}, function() -- Done
                     TriggerServerEvent('qb-luchettijob:server:CashReceipt')
 					TriggerServerEvent('QBCore:Server:RemoveItem', "pizza-receipt", 1)
-                    			QBCore.Functions.Notify("You Filed a Receipt", "success")
+                    QBCore.Functions.Notify(Loc.success['filereceipt'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You need a receipt for that", "error")
+   				QBCore.Functions.Notify(Loc.error['needreceipt'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -83,7 +84,7 @@ function startpizzarun()
                 {
                     event = "qb-luchettijob:deliveries:KnockDoor",
                     icon = "far fa-pizza-slice",
-                    label = "Knock Door",
+                    label = Loc.general['knock'],
                     item = "pizza-delivery",
                 },
             },
@@ -92,7 +93,7 @@ function startpizzarun()
         SetNewWaypoint(prob)
         pizzaDrop = pizzaDrop + 1
     else
-        QBCore.Functions.Notify('You Have Delivered All Pizzas', 'info', 5000)
+        QBCore.Functions.Notify(Loc.success['pizzadone'], 'info', 5000)
         pizzaDrop = 0
         haspizzarun = false
     end

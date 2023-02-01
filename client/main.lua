@@ -2,6 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 isLoggedIn = false
 local onDuty = true
 PlayerJob = {}
+local Loc = Locale[Config.Lang]
 
 function DrawText3Ds(x, y, z, text)
 	SetTextScale(0.35, 0.35)
@@ -220,7 +221,7 @@ AddEventHandler("qb-luchettijob:Aperitivo", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientAperitivo', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Aperitivo..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -231,17 +232,17 @@ AddEventHandler("qb-luchettijob:Aperitivo", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingaperitivo')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["aperitivo"], "add")
-                    			QBCore.Functions.Notify("You made Aperitivo", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["aperitivo"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmadedrink'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -250,7 +251,7 @@ AddEventHandler("qb-luchettijob:Negroni", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientNegroni', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Negroni..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -261,17 +262,17 @@ AddEventHandler("qb-luchettijob:Negroni", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingnegroni')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["negroni"], "add")
-                    			QBCore.Functions.Notify("You made Negroni", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["negroni"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmadedrink'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -280,7 +281,7 @@ AddEventHandler("qb-luchettijob:Campari", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientCampari', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Campari..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -291,17 +292,17 @@ AddEventHandler("qb-luchettijob:Campari", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingcampari')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["campari"], "add")
-                    			QBCore.Functions.Notify("You made Campari", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["campari"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmadedrink'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -310,7 +311,7 @@ AddEventHandler("qb-luchettijob:Americano", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientAmericano', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Americano..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -321,17 +322,17 @@ AddEventHandler("qb-luchettijob:Americano", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingamericano')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["americano"], "add")
-                    			QBCore.Functions.Notify("You made Americano", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["americano"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmadedrink'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -340,7 +341,7 @@ AddEventHandler("qb-luchettijob:Bellini", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientBellini', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Bellini..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -351,17 +352,17 @@ AddEventHandler("qb-luchettijob:Bellini", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingbellini')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bellini"], "add")
-                    			QBCore.Functions.Notify("You made Bellini", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["bellini"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmadedrink'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -370,7 +371,7 @@ AddEventHandler("qb-luchettijob:Spritz", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientSpritz', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Spritz..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -381,17 +382,17 @@ AddEventHandler("qb-luchettijob:Spritz", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingspritz')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["spritz"], "add")
-                    			QBCore.Functions.Notify("You made Spritz", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["spritz"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmadedrink'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -402,7 +403,7 @@ AddEventHandler("qb-luchettijob:MakeBreadstick", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientBreadstick', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Meal..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -413,17 +414,17 @@ AddEventHandler("qb-luchettijob:MakeBreadstick", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingbreadsticks')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["breadsticks"], "add")
-                    			QBCore.Functions.Notify("You made a meal", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["breadsticks"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the items to make this", "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end  
 end)
 
@@ -432,7 +433,7 @@ AddEventHandler("qb-luchettijob:MakeMozzarellaCarrozza", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientMozzarellaCarrozza', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Mozzarella In Carrozza..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -443,17 +444,17 @@ AddEventHandler("qb-luchettijob:MakeMozzarellaCarrozza", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingmozzarella')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["mozarella-carrozza"], "add")
-                    			QBCore.Functions.Notify("You made Mozzarella In Carrozza", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["mozarella-carrozza"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
    				QBCore.Functions.Notify("You dont have the items to make this", "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end  
 end)
 
@@ -462,7 +463,7 @@ AddEventHandler("qb-luchettijob:MakePolpette", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientPolpette', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Polpette Della Nonna..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -473,17 +474,17 @@ AddEventHandler("qb-luchettijob:MakePolpette", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingpolpette')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["polpette-della-nonna"], "add")
-                    			QBCore.Functions.Notify("You made Polpette Della Nonna", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["polpette-della-nonna"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -492,7 +493,7 @@ AddEventHandler("qb-luchettijob:MakeGarlicBread", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientGarlicBread', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Garlic Bread..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -503,17 +504,17 @@ AddEventHandler("qb-luchettijob:MakeGarlicBread", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makinggarlicbread')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["garlic-bread"], "add")
-                    			QBCore.Functions.Notify("You made Garlic Bread", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["garlic-bread"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -522,7 +523,7 @@ AddEventHandler("qb-luchettijob:MakePrawnCocktail", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientPrawnCocktail', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Prawn Cocktail..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -533,17 +534,17 @@ AddEventHandler("qb-luchettijob:MakePrawnCocktail", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingcocktail')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["prawn-cocktail"], "add")
-                    			QBCore.Functions.Notify("You made Prawn Cocktail", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["prawn-cocktail"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -555,7 +556,7 @@ AddEventHandler("qb-luchettijob:MakeMargherita", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientMargherita', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Margherita..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -566,17 +567,17 @@ AddEventHandler("qb-luchettijob:MakeMargherita", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingpizza1')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["margherita-pizza"], "add")
-                    			QBCore.Functions.Notify("You made a Margherita Pizza", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["margherita-pizza"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -585,7 +586,7 @@ AddEventHandler("qb-luchettijob:MakePepperoni", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientPepperoni', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Pepperoni..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -596,17 +597,17 @@ AddEventHandler("qb-luchettijob:MakePepperoni", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingpizza2')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["pepperoni-pizza"], "add")
-                    			QBCore.Functions.Notify("You made a Pepperoni Pizza", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["pepperoni-pizza"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -615,7 +616,7 @@ AddEventHandler("qb-luchettijob:MakeHawaiian", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientHawaiian', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Hawaiian..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -626,17 +627,17 @@ AddEventHandler("qb-luchettijob:MakeHawaiian", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingpizza3')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["hawaiian-pizza"], "add")
-                    			QBCore.Functions.Notify("You made a Hawaiian Pizza", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["hawaiian-pizza"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -645,7 +646,7 @@ AddEventHandler("qb-luchettijob:MakeVegetablePizza", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientVegetable', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Vegetable..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -656,17 +657,17 @@ AddEventHandler("qb-luchettijob:MakeVegetablePizza", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingpizza4')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["vegetable-pizza"], "add")
-                    			QBCore.Functions.Notify("You made a Vegetable Pizza", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["vegetable-pizza"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -677,7 +678,7 @@ AddEventHandler("qb-luchettijob:MakeFiorentina", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientFiorentina', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Fiorentina..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -688,17 +689,17 @@ AddEventHandler("qb-luchettijob:MakeFiorentina", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingfiorentina')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fiorentina"], "add")
-                    			QBCore.Functions.Notify("You made a plate of Fiorentina", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fiorentina"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -707,7 +708,7 @@ AddEventHandler("qb-luchettijob:MakeVealMilanese", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientVealMilanese', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Veal Milanese..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -718,17 +719,17 @@ AddEventHandler("qb-luchettijob:MakeVealMilanese", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingmilanese')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["veal-milanese"], "add")
-                    			QBCore.Functions.Notify("You made a Veal Milanese", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["veal-milanese"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -737,7 +738,7 @@ AddEventHandler("qb-luchettijob:MakeRavioli", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientRavioli', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Ravioli Dish..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -748,17 +749,17 @@ AddEventHandler("qb-luchettijob:MakeRavioli", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingravioli')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ravioli"], "add")
-                    			QBCore.Functions.Notify("You made a Ravioli Dish", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ravioli"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -767,7 +768,7 @@ AddEventHandler("qb-luchettijob:MakeCarbonara", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-luchettijob:server:get:ingredientCarbonara', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Spaghetti Carbonara..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", Loc.general['making'], 4000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -778,17 +779,17 @@ AddEventHandler("qb-luchettijob:MakeCarbonara", function()
 					flags = 8,
 				}, {}, {}, function() -- Done
 					TriggerServerEvent('qb-luchettijob:server:makingcarbonara')
-                    			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["spaghetti-carbonara"], "add")
-                    			QBCore.Functions.Notify("You made Spaghetti Carbonara", "success")
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["spaghetti-carbonara"], "add")
+                    QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 				end, function()
-					QBCore.Functions.Notify("Cancelled..", "error")
+					QBCore.Functions.Notify(Loc.error['cancelled'], "error")
 				end)
 			else
-   				QBCore.Functions.Notify("You dont have the right stuff to make this", "error")
+   				QBCore.Functions.Notify(Loc.error['needingredients'], "error")
 			end
 		end)
 	else 
-		QBCore.Functions.Notify("You must be Clocked into work", "error")
+		QBCore.Functions.Notify(Loc.error['clockin'], "error")
 	end
 end)
 
@@ -830,10 +831,10 @@ AddEventHandler("qb-luchettijob:PrepFries", function()
     if QBCore.Functions.HasItem('potato-sack') then
            PrepFries()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -843,10 +844,10 @@ AddEventHandler("qb-luchettijob:MakeFries", function()
    if QBCore.Functions.HasItem('uncooked-fries') then
            MakeFries()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -856,10 +857,10 @@ AddEventHandler("qb-luchettijob:MakeMashedPotato", function()
     if QBCore.Functions.HasItem('potato-sack') then
            MakeMashedPotato()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -869,10 +870,10 @@ AddEventHandler("qb-luchettijob:MakeChips", function()
     if QBCore.Functions.HasItem('uncooked-fries') then
            MakeChips()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -882,10 +883,10 @@ AddEventHandler("qb-luchettijob:ChopTomato", function()
     if QBCore.Functions.HasItem('tomato') then
            ChopTomato()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -895,10 +896,10 @@ AddEventHandler("qb-luchettijob:MakeTomatoPuree", function()
     if QBCore.Functions.HasItem('tomato') then
             MakeTomatoPuree()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -908,10 +909,10 @@ AddEventHandler("qb-luchettijob:ChopCheese", function()
 		if QBCore.Functions.HasItem('cheese-wheel') then
             ChopCheese()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -921,10 +922,10 @@ AddEventHandler("qb-luchettijob:MakeBeefSteak", function()
 		if QBCore.Functions.HasItem('beef-patty') then
            MakeBeefSteak()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -935,10 +936,10 @@ AddEventHandler("qb-luchettijob:MakeVealSteak", function()
 		if QBCore.Functions.HasItem('veal-patty') then
            MakeVealSteak()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
@@ -948,16 +949,16 @@ AddEventHandler("qb-luchettijob:MakeMeatballs", function()
 		if QBCore.Functions.HasItem('uncooked-meatballs') then
            MakeMeatballs()
         else
-            QBCore.Functions.Notify("You don't have the right stuff..", "error")
+            QBCore.Functions.Notify(Loc.error['needingredients'], "error")
         end
     else
-        QBCore.Functions.Notify("You must be Clocked into work", "error")
+        QBCore.Functions.Notify(Loc.error['clockin'], "error")
     end
 end)
 
 RegisterNetEvent("qb-luchettijob:Gelato")
 AddEventHandler("qb-luchettijob:Gelato", function()
-	QBCore.Functions.Progressbar("pickup", "Getting Gelato..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -971,13 +972,13 @@ AddEventHandler("qb-luchettijob:Gelato", function()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:givegelato')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["gelato"], "add")
-	QBCore.Functions.Notify("Whipped up some Gelato", "success")
+	QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end)
 
 RegisterNetEvent("qb-luchettijob:FudgeCake")
 AddEventHandler("qb-luchettijob:FudgeCake", function()
-	QBCore.Functions.Progressbar("pickup", "Getting Fudge Cake..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -991,13 +992,13 @@ AddEventHandler("qb-luchettijob:FudgeCake", function()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:givefudge')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fudge-cake"], "add")
-	QBCore.Functions.Notify("Made some Fudge Cake", "success")
+	QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end)
 
 RegisterNetEvent("qb-luchettijob:Tiramisu")
 AddEventHandler("qb-luchettijob:Tiramisu", function()
-	QBCore.Functions.Progressbar("pickup", "Getting Tiramisu..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1011,13 +1012,13 @@ AddEventHandler("qb-luchettijob:Tiramisu", function()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:givetiramisu')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tiramisu"], "add")
-	QBCore.Functions.Notify("Whipped up some Tiramisu", "success")
+	QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end)
 
 RegisterNetEvent("qb-luchettijob:Cheesecake")
 AddEventHandler("qb-luchettijob:Cheesecake", function()
-	QBCore.Functions.Progressbar("pickup", "Getting Cheesecake..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1031,13 +1032,13 @@ AddEventHandler("qb-luchettijob:Cheesecake", function()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:givecheesecake')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cheesecake"], "add")
-	QBCore.Functions.Notify("Whipped up some Cheesecake", "success")
+	QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end)
 
 RegisterNetEvent("qb-luchettijob:PannaCotta")
 AddEventHandler("qb-luchettijob:PannaCotta", function()
-	QBCore.Functions.Progressbar("pickup", "Getting Panna Cotta..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1051,13 +1052,13 @@ AddEventHandler("qb-luchettijob:PannaCotta", function()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:givepanna')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["panna-cotta"], "add")
-	QBCore.Functions.Notify("Whipped up some Panna Cotta", "success")
+	QBCore.Functions.Notify(Loc.success['youmademeal'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end)
 
 -- Functions --
 function PrepFries()
-	QBCore.Functions.Progressbar("pickup", "Chopping Potatoes..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1071,12 +1072,12 @@ function PrepFries()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:prepfries')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["uncooked-fries"], "add")
-	QBCore.Functions.Notify("Prepped Some Fries", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeFries()
-	QBCore.Functions.Progressbar("pickup", "Frying..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1090,12 +1091,12 @@ function MakeFries()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:makefries')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["fries"], "add")
-	QBCore.Functions.Notify("Made Some Fries", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeChips()
-	QBCore.Functions.Progressbar("pickup", "Making Chips..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1109,12 +1110,12 @@ function MakeChips()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:makechips')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["potato-chips"], "add")
-	QBCore.Functions.Notify("Made Some Chips", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeMashedPotato()
-	QBCore.Functions.Progressbar("pickup", "Mashing The Potatoes..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1128,12 +1129,12 @@ function MakeMashedPotato()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:makemash')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["mashed-potato"], "add")
-	QBCore.Functions.Notify("Mashed Some Potatoes", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function ChopTomato()
-	QBCore.Functions.Progressbar("pickup", "Chopping Tomato..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1147,12 +1148,12 @@ function ChopTomato()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:maketomslice')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tomato-slice"], "add")
-	QBCore.Functions.Notify("You Chopped a Tomato", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeTomatoPuree()
-	QBCore.Functions.Progressbar("pickup", "Making Tomato Puree..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1166,12 +1167,12 @@ function MakeTomatoPuree()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:makepuree')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["tomato-puree"], "add")
-	QBCore.Functions.Notify("You Made Some Tomato Puree", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function ChopCheese()
-	QBCore.Functions.Progressbar("pickup", "Chopping Cheese Block..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1185,12 +1186,12 @@ function ChopCheese()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:chopcheese')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cheese"], "add")
-	QBCore.Functions.Notify("Chopped up Cheese", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeBeefSteak()
-	QBCore.Functions.Progressbar("pickup", "Grilling a Steak..", 4000, false, true, {
+	QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
 	    disableMovement = true,
 	    disableCarMovement = true,
 	    disableMouse = false,
@@ -1204,13 +1205,13 @@ function MakeBeefSteak()
 	Citizen.Wait(4000)
 	TriggerServerEvent('qb-luchettijob:server:makebsteak')
 	TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["beef-steak"], "add")
-	QBCore.Functions.Notify("You Grilled a Beef Steak", "success")
+	QBCore.Functions.Notify(Loc.success['youprepped'], "success")
 	StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 
 function MakeVealSteak()
-    QBCore.Functions.Progressbar("pickup", "Grilling a Steak..", 4000, false, true, {
+    QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -1224,12 +1225,12 @@ function MakeVealSteak()
     Citizen.Wait(4000)
     TriggerServerEvent('qb-luchettijob:server:makevsteak')
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["veal-steak"], "add")
-    QBCore.Functions.Notify("You Grilled a Veal Steak", "success")
+    QBCore.Functions.Notify(Loc.success['youprepped'], "success")
     StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
 function MakeMeatballs()
-    QBCore.Functions.Progressbar("pickup", "Making some Meatballs..", 4000, false, true, {
+    QBCore.Functions.Progressbar("pickup", Loc.general['making'], 4000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -1243,7 +1244,7 @@ function MakeMeatballs()
     Citizen.Wait(4000)
     TriggerServerEvent('qb-luchettijob:server:makemeatball')
     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["meatballs"], "add")
-    QBCore.Functions.Notify("You Made Some Meatballs", "success")
+    QBCore.Functions.Notify(Loc.success['youprepped'], "success")
     StopAnimTask(PlayerPedId(), "amb@prop_human_bbq@male@base", "base", 1.0)
 end
 
