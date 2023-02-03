@@ -4,7 +4,6 @@ isLoggedIn = false
 PlayerJob = {}
 
 local onDuty = false
-local Loc = Locale[Config.Lang] 
 
 Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("LuchettiDuty", vector3(292.05, -980.14, 29.52), 1.0, 1.2, {
@@ -18,7 +17,7 @@ Citizen.CreateThread(function()
 		    {  
 			event = "qb-luchettijob:DutyB",
 			icon = "far fa-clipboard",
-			label = Loc.menu['clock'],
+			label = Locale[Config.Lang].menu['clock'],
 			job = "luchetti",
 		    },
 		},
@@ -35,12 +34,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table1",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 1",
+			label = Locale[Config.Lang].menu['table'].." 1",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -56,12 +55,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table2",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 2",
+			label = Locale[Config.Lang].menu['table'].." 2",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -77,12 +76,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table3",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 3",
+			label = Locale[Config.Lang].menu['table'].." 3",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -98,12 +97,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table4",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 4",
+			label = Locale[Config.Lang].menu['table'].." 4",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -119,12 +118,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table5",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 5",
+			label = Locale[Config.Lang].menu['table'].." 5",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -140,12 +139,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table6",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 6",
+			label = Locale[Config.Lang].menu['table'].." 6",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -161,12 +160,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table7",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 7",
+			label = Locale[Config.Lang].menu['table'].." 7",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 1.5
@@ -182,12 +181,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table8",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 8",
+			label = Locale[Config.Lang].menu['table'].." 8",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 2.5
@@ -203,12 +202,12 @@ Citizen.CreateThread(function()
 		    {
 			event = "qb-luchettijob:Table9",
 			icon = "fas fa-menorah",
-			label = Loc.menu['table']" 9",
+			label = Locale[Config.Lang].menu['table'].." 9",
 		    },
             {
             event = "qb-menu:ViewLuchettiMenu",
             icon = "fas fa-book",
-            label = Loc.menu['viewmenu'],
+            label = Locale[Config.Lang].menu['viewmenu'],
             },
 		},
 		distance = 2.5
@@ -224,7 +223,7 @@ Citizen.CreateThread(function()
 			{
 				event = "qb-menu:LuchettiDrinkMenu",
 				icon = "fas fa-cocktail",
-				label = Loc.menu['drinkm'],
+				label = Locale[Config.Lang].menu['drinkm'],
 				job = "luchetti",
 			},
 		},
@@ -241,7 +240,7 @@ Citizen.CreateThread(function()
             {
                 event = "qb-menu:LuchettiStorage",
                 icon = "fas fa-box",
-                label = Loc.menu['storage'],
+                label = Locale[Config.Lang].menu['storage'],
                 job = "luchetti",
             },
         },
@@ -258,7 +257,7 @@ Citizen.CreateThread(function()
             {
                 event = "qb-luchettijob:OfficeSafe",
                 icon = "fas fa-lock",
-                label = Loc.menu['safe'],
+                label = Locale[Config.Lang].menu['safe'],
                 job = "luchetti",
                 grade = 3
             },
@@ -276,7 +275,7 @@ Citizen.CreateThread(function()
             {
                 event = "qb-luchettijob:DownstairsSafe",
                 icon = "fas fa-lock",
-                label = Loc.menu['safe'],
+                label = Locale[Config.Lang].menu['safe'],
                 job = "luchetti",
                 grade = 3
             },
@@ -294,7 +293,7 @@ Citizen.CreateThread(function()
             {
                 event = "qb-luchettijob:WineFridge",
                 icon = "fas fa-wine-bottle",
-                label = Loc.menu['drinkfridge'],
+                label = Locale[Config.Lang].menu['drinkfridge'],
                 job = "luchetti",
             },
         },
@@ -310,8 +309,8 @@ Citizen.CreateThread(function()
         options = {
             {
                 event = "qb-menu:LuchettiMicrowave",
-                icon = "fas fa-microwave",
-                label = Loc.menu['microwave'],
+                icon = "fas fa-fire",
+                label = Locale[Config.Lang].menu['microwave'],
                 job = "luchetti",
             },
         },
@@ -327,8 +326,8 @@ Citizen.CreateThread(function()
         options = {
             {
                 event = "qb-menu:LuchettiGrill",
-                icon = "fas fa-meat",
-                label = Loc.menu['grill'],
+                icon = "fas fa-fire",
+                label = Locale[Config.Lang].menu['grill'],
                 job = "luchetti",
             },
         },
@@ -344,8 +343,8 @@ Citizen.CreateThread(function()
         options = {
             {
                 event = "qb-menu:LuchettiFryer",
-                icon = "fas fa-steak",
-                label = Loc.menu['fryer'],
+                icon = "fas fa-fire",
+                label = Locale[Config.Lang].menu['fryer'],
                 job = "luchetti",
             },
         },
@@ -362,7 +361,7 @@ Citizen.CreateThread(function()
             {
                 event = "qb-menu:LuchettiChopping",
                 icon = "fas fa-knife",
-                label = Loc.menu['preps'],
+                label = Locale[Config.Lang].menu['preps'],
                 job = "luchetti",
             },
         },
@@ -378,8 +377,8 @@ Citizen.CreateThread(function()
         options = {
             {
                 event = "qb-menu:LuchettiPizzaOven",
-                icon = "fas fa-pizza",
-                label = Loc.menu['pizzaoven'],
+                icon = "fas fa-fire",
+                label = Locale[Config.Lang].menu['pizzaoven'],
                 job = "luchetti",
             },
         },
@@ -396,7 +395,7 @@ Citizen.CreateThread(function()
                 {
                     event = "qb-menu:LuchettiManagerPC",
                     icon = "fas fa-laptop",
-                    label = Loc.menu['managerpc'],
+                    label = Locale[Config.Lang].menu['managerpc'],
                     job = "luchetti",
                 },
             },
@@ -414,7 +413,7 @@ Citizen.CreateThread(function()
                     event = "qb-luchettijob:bill",
                     parms = "1",
                     icon = "fas fa-credit-card",
-                    label = Loc.menu['invoice'],
+                    label = Locale[Config.Lang].menu['invoice'],
                     job = "luchetti",
                 },
             },
@@ -432,7 +431,7 @@ Citizen.CreateThread(function()
                     event = "qb-luchettijob:bill",
                     parms = "1",
                     icon = "fas fa-credit-card",
-                    label = Loc.menu['invoice'],
+                    label = Locale[Config.Lang].menu['invoice'],
                     job = "luchetti",
                 },
             },
@@ -449,7 +448,7 @@ Citizen.CreateThread(function()
                 {
                     event = "qb-menu:LuchettiDessertFridge",
                     icon = "fas fa-cake",
-                    label = Loc.menu['desserts'],
+                    label = Locale[Config.Lang].menu['desserts'],
                     job = "luchetti",
                 },
             },
@@ -465,12 +464,12 @@ RegisterNetEvent('qb-menu:ViewLuchettiMenu', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = "| "..Loc.menu['luchettimenu'].." |",
+            header = "| "..Locale[Config.Lang].menu['luchettimenu'].." |",
             isMenuHeader = true, 
         },
         {
             
-            header = Loc.menu['starters'],
+            header = Locale[Config.Lang].menu['starters'],
             txt = "",
             params = {
                 event = "qb-menu:ViewLuchettiStarters"
@@ -478,7 +477,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiMenu', function(data)
         },
         {
             
-            header = Loc.menu['mains'],
+            header = Locale[Config.Lang].menu['mains'],
             txt = "",
             params = {
                 event = "qb-menu:ViewLuchettiMains"
@@ -486,7 +485,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiMenu', function(data)
         },  
         {
             
-            header = Loc.menu['pizzas'],
+            header = Locale[Config.Lang].menu['pizzas'],
             txt = "",
             params = {
                 event = "qb-menu:ViewLuchettiPizzas"
@@ -494,7 +493,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiMenu', function(data)
         }, 
         {
             
-            header = Loc.menu['desserts'],
+            header = Locale[Config.Lang].menu['desserts'],
             txt = "",
             params = {
                 event = "qb-menu:ViewLuchettiDesserts"
@@ -502,7 +501,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiMenu', function(data)
         },
         {
             
-            header = Loc.menu['drinks'],
+            header = Locale[Config.Lang].menu['drinks'],
             txt = "",
             params = {
                 event = "qb-menu:ViewLuchettiDrinks"
@@ -520,7 +519,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiStarters', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['starters'],
+            header = Locale[Config.Lang].menu['starters'],
             isMenuHeader = true, 
         },
         {
@@ -568,7 +567,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiMains', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['mains'],
+            header = Locale[Config.Lang].menu['mains'],
             isMenuHeader = true, 
         },
         {
@@ -610,7 +609,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiPizzas', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['pizzas'],
+            header = Locale[Config.Lang].menu['pizzas'],
             isMenuHeader = true, 
         },
         {
@@ -652,7 +651,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiDesserts', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['desserts'],
+            header = Locale[Config.Lang].menu['desserts'],
             isMenuHeader = true, 
         },
         {
@@ -700,7 +699,7 @@ RegisterNetEvent('qb-menu:ViewLuchettiDrinks', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['drinks'],
+            header = Locale[Config.Lang].menu['drinks'],
             isMenuHeader = true, 
         },
         {
@@ -754,7 +753,7 @@ RegisterNetEvent('qb-menu:LuchettiDrinkMenu', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['drinks'],
+            header = Locale[Config.Lang].menu['drinks'],
             isMenuHeader = true, 
         },
         {
@@ -817,7 +816,7 @@ RegisterNetEvent('qb-menu:LuchettiDessertFridge', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['desserts'],
+            header = Locale[Config.Lang].menu['desserts'],
             isMenuHeader = true, 
         },
         {
@@ -872,45 +871,45 @@ RegisterNetEvent('qb-menu:LuchettiStorage', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['storage'],
+            header = Locale[Config.Lang].menu['storage'],
             isMenuHeader = true, 
         },
         {
             
-            header = Loc.menu['shelf']" 1",
-            txt = Loc.menu['accessshelf'],
+            header = Locale[Config.Lang].menu['shelf'].." 1",
+            txt = Locale[Config.Lang].menu['accessshelf'],
             params = {
                 event = "qb-luchettijob:Shelf1"
             }
         },
         {
             
-            header = Loc.menu['shelf']" 2",
-            txt = Loc.menu['accessshelf'],
+            header = Locale[Config.Lang].menu['shelf'].." 2",
+            txt = Locale[Config.Lang].menu['accessshelf'],
             params = {
                 event = "qb-luchettijob:Shelf2"
             }
         },
         {
             
-            header = Loc.menu['shelf']" 3",
-            txt = Loc.menu['accessshelf'],
+            header = Locale[Config.Lang].menu['shelf'].." 3",
+            txt = Locale[Config.Lang].menu['accessshelf'],
             params = {
                 event = "qb-luchettijob:Shelf3"
             }
         },  
         {
             
-            header = Loc.menu['shelf']" 4",
-            txt = Loc.menu['accessshelf'],
+            header = Locale[Config.Lang].menu['shelf'].." 4",
+            txt = Locale[Config.Lang].menu['accessshelf'],
             params = {
                 event = "qb-luchettijob:Shelf4"
             }
         },
         {
             
-            header = Loc.menu['shelf']" 5",
-            txt = Loc.menu['accessshelf'],
+            header = Locale[Config.Lang].menu['shelf'].." 5",
+            txt = Locale[Config.Lang].menu['accessshelf'],
             params = {
                 event = "qb-luchettijob:Shelf5"
             }
@@ -928,12 +927,12 @@ RegisterNetEvent('qb-menu:LuchettiMicrowave', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['microwave'],
+            header = Locale[Config.Lang].menu['microwave'],
             isMenuHeader = true, 
         },
         {
             
-            header = Loc.menu['starters'],
+            header = Locale[Config.Lang].menu['starters'],
             txt = "",
             params = {
                 event = "qb-menu:StartersMenu"
@@ -941,7 +940,7 @@ RegisterNetEvent('qb-menu:LuchettiMicrowave', function(data)
         },
         {
             
-            header = Loc.menu['mains'],
+            header = Locale[Config.Lang].menu['mains'],
             txt = "",
             params = {
                 event = "qb-menu:MainsMenu"
@@ -959,7 +958,7 @@ RegisterNetEvent('qb-menu:MainsMenu', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['mains'],
+            header = Locale[Config.Lang].menu['mains'],
             isMenuHeader = true, 
         },
         {
@@ -1006,7 +1005,7 @@ RegisterNetEvent('qb-menu:LuchettiPizzaOven', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['pizzas'],
+            header = Locale[Config.Lang].menu['pizzas'],
             isMenuHeader = true, 
         },
         {
@@ -1053,7 +1052,7 @@ RegisterNetEvent('qb-menu:StartersMenu', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['starters'],
+            header = Locale[Config.Lang].menu['starters'],
             isMenuHeader = true, 
         },
         {
@@ -1109,7 +1108,7 @@ RegisterNetEvent('qb-menu:LuchettiGrill', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['grill'],
+            header = Locale[Config.Lang].menu['grill'],
             isMenuHeader = true, 
         },
         {
@@ -1148,7 +1147,7 @@ RegisterNetEvent('qb-menu:LuchettiFryer', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['fryer'],
+            header = Locale[Config.Lang].menu['fryer'],
             isMenuHeader = true, 
         },
         {
@@ -1179,7 +1178,7 @@ RegisterNetEvent('qb-menu:LuchettiChopping', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['preps'],
+            header = Locale[Config.Lang].menu['preps'],
             isMenuHeader = true, 
         },
         {
@@ -1218,7 +1217,7 @@ RegisterNetEvent('qb-menu:PrepPotatoes', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['potato'],
+            header = Locale[Config.Lang].menu['potato'],
             isMenuHeader = true, 
         },
         {
@@ -1249,7 +1248,7 @@ RegisterNetEvent('qb-menu:PrepTomatoes', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['tomato'],
+            header = Locale[Config.Lang].menu['tomato'],
             isMenuHeader = true, 
         },
         {
@@ -1280,20 +1279,20 @@ RegisterNetEvent('qb-menu:LuchettiManagerPC', function(data)
     exports['qb-menu']:openMenu({
         {
             
-            header = Loc.menu['managerpc'],
+            header = Locale[Config.Lang].menu['managerpc'],
             isMenuHeader = true, 
         },
         {
             
-            header = Loc.menu['orderstock'],
-            txt = Loc.menu['placeorder'],
+            header = Locale[Config.Lang].menu['orderstock'],
+            txt = Locale[Config.Lang].menu['placeorder'],
             params = {
                 event = "qb-luchettijob:shop"
             }
         },
         {
 
-            header = Loc.menu['cashreceipt'],
+            header = Locale[Config.Lang].menu['cashreceipt'],
             txt = "",
             params = {
                 event = "qb-luchettijob:deliveries:CashReceipt"
@@ -1301,7 +1300,7 @@ RegisterNetEvent('qb-menu:LuchettiManagerPC', function(data)
         },
         {
            
-            header = Loc.menu['manage'],
+            header = Locale[Config.Lang].menu['manage'],
             txt = "",
             params = {
                 event = "qb-bossmenu:client:OpenMenu"
@@ -1319,8 +1318,8 @@ end)
 RegisterNetEvent("qb-luchettijob:bill")
 AddEventHandler("qb-luchettijob:bill", function()
     local bill = exports['qb-input']:ShowInput({
-        header = Loc.menu['createreceipt'],
-		submitText = Loc.menu['bill'],
+        header = Locale[Config.Lang].menu['createreceipt'],
+		submitText = Locale[Config.Lang].menu['bill'],
         inputs = {
             {
                 text = "Server ID(#)",

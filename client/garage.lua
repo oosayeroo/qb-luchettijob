@@ -3,7 +3,6 @@ PlayerData = {}
 local pedspawned = false
 local onDuty = true
 PlayerJob = {}
-local Loc = Locale[Config.Lang]
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 function QBCore.Functions.GetPlayerData(cb)
@@ -70,13 +69,13 @@ AddEventHandler('qb-luchettijob:garage', function(lj)
             end, coords, true)
         end
     else
-        QBCore.Functions.Notify(Loc.error['nojob'], 'error')
+        QBCore.Functions.Notify(Locale[Config.Lang].error['nojob'], 'error')
     end
 end)
 
 RegisterNetEvent('qb-luchettijob:storecar')
 AddEventHandler('qb-luchettijob:storecar', function()
-    QBCore.Functions.Notify(Loc.success['storeveh'])
+    QBCore.Functions.Notify(Locale[Config.Lang].success['storeveh'])
     local car = GetVehiclePedIsIn(PlayerPedId(),true)
     NetworkFadeOutEntity(car, true,false)
     Citizen.Wait(2000)
@@ -86,12 +85,12 @@ end)
 RegisterNetEvent('garage:LuchettiGarage', function()
     exports['qb-menu']:openMenu({
         {
-            header = "| Luchetti "..Loc.general['garage'].." |",
+            header = "| Luchetti "..Locale[Config.Lang].general['garage'].." |",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
             header = Config.LuchettiVehicleModel,
-            txt = Loc.general['delveh'],
+            txt = Locale[Config.Lang].general['delveh'],
             params = {
                 event = "qb-luchettijob:garage",
                 args = {
@@ -101,8 +100,8 @@ RegisterNetEvent('garage:LuchettiGarage', function()
         },
         {
             
-            header = Loc.general['takedel'],
-            txt = Loc.general['takehouse'],
+            header = Locale[Config.Lang].general['takedel'],
+            txt = Locale[Config.Lang].general['takehouse'],
             params = {
                 event = "qb-luchettijob:deliveries:StartPizzaRun",
                 args = {
@@ -111,8 +110,8 @@ RegisterNetEvent('garage:LuchettiGarage', function()
             }
         },  
         {
-            header = Loc.general['storeveh'],
-            txt = Loc.general['storeveh'],
+            header = Locale[Config.Lang].general['storeveh'],
+            txt = Locale[Config.Lang].general['storeveh'],
             params = {
                 event = "qb-luchettijob:storecar",
                 args = {
@@ -121,7 +120,7 @@ RegisterNetEvent('garage:LuchettiGarage', function()
             }
         },	
         {
-            header = Loc.general['close']" (ESC)",
+            header = Locale[Config.Lang].general['close'].." (ESC)",
             isMenuHeader = true,
         },	
     })
