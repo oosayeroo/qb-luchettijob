@@ -1,5 +1,4 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local Loc = Locale[Config.Lang]
 
 RegisterServerEvent("qb-luchettijob:bill:player")
 AddEventHandler("qb-luchettijob:bill:player", function(playerId, amount)
@@ -18,19 +17,19 @@ AddEventHandler("qb-luchettijob:bill:player", function(playerId, amount)
                             ['sendercitizenid'] = biller.PlayerData.citizenid
                         })
                         TriggerClientEvent('qs-smartphonephone:RefreshPhone', billed.PlayerData.source)
-                        TriggerClientEvent('QBCore:Notify', source, Loc.success['sentinvoice'], 'success')
-                        TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, Loc.general['gotinvoice'])
+                        TriggerClientEvent('QBCore:Notify', source, Locale[Config.Lang].success['sentinvoice'], 'success')
+                        TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, Locale[Config.Lang].general['gotinvoice'])
                     else
-                        TriggerClientEvent('QBCore:Notify', source, Loc.error['abovezero'], 'error')
+                        TriggerClientEvent('QBCore:Notify', source, Locale[Config.Lang].error['abovezero'], 'error')
                     end
                 else
-                    TriggerClientEvent('QBCore:Notify', source, Loc.error['billself'], 'error')
+                    TriggerClientEvent('QBCore:Notify', source, Locale[Config.Lang].error['billself'], 'error')
                 end
             else
-                TriggerClientEvent('QBCore:Notify', source, Loc.error['notonline'], 'error')
+                TriggerClientEvent('QBCore:Notify', source, Locale[Config.Lang].error['notonline'], 'error')
             end
         else
-            TriggerClientEvent('QBCore:Notify', source, Loc.error['nojob'], 'error')
+            TriggerClientEvent('QBCore:Notify', source, Locale[Config.Lang].error['nojob'], 'error')
         end
 end)
 
