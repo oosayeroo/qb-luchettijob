@@ -33,14 +33,7 @@ Citizen.CreateThread(function()
         blockevents = true,
         scenario = 'WORLD_HUMAN_DRUG_DEALER',
         target = { 
-            options = {
-                {
-                    type="client",
-                    event = "garage:LuchettiGarage",
-                    icon = "fas fa-car",
-                    label = "Mario"
-                }
-            },
+            options = {{type="client",event = "garage:LuchettiGarage",icon = "fas fa-car",label = "Mario"}},
           distance = 2.5,
         },
     })
@@ -84,44 +77,10 @@ end)
 
 RegisterNetEvent('garage:LuchettiGarage', function()
     exports['qb-menu']:openMenu({
-        {
-            header = "| Luchetti "..Locale[Config.Lang].general['garage'].." |",
-            isMenuHeader = true, -- Set to true to make a nonclickable title
-        },
-        {
-            header = Config.LuchettiVehicleModel,
-            txt = Locale[Config.Lang].general['delveh'],
-            params = {
-                event = "qb-luchettijob:garage",
-                args = {
-                    vehicle = Config.LuchettiVehicleModel,
-                }
-            }
-        },
-        {
-            
-            header = Locale[Config.Lang].general['takedel'],
-            txt = Locale[Config.Lang].general['takehouse'],
-            params = {
-                event = "qb-luchettijob:deliveries:StartPizzaRun",
-                args = {
-                   
-                }
-            }
-        },  
-        {
-            header = Locale[Config.Lang].general['storeveh'],
-            txt = Locale[Config.Lang].general['storeveh'],
-            params = {
-                event = "qb-luchettijob:storecar",
-                args = {
-                    
-                }
-            }
-        },	
-        {
-            header = Locale[Config.Lang].general['close'].." (ESC)",
-            isMenuHeader = true,
-        },	
+        {header = "| Luchetti "..Locale[Config.Lang].general['garage'].." |",isMenuHeader = true, },
+        {header = Config.LuchettiVehicleModel,txt = Locale[Config.Lang].general['delveh'],params = {event = "qb-luchettijob:garage",args = {vehicle = Config.LuchettiVehicleModel,}}},
+        {header = Locale[Config.Lang].general['takedel'],txt = Locale[Config.Lang].general['takehouse'],params = {event = "qb-luchettijob:deliveries:StartPizzaRun",args = {}}},  
+        {header = Locale[Config.Lang].general['storeveh'],txt = Locale[Config.Lang].general['storeveh'],params = {event = "qb-luchettijob:storecar",args = {}}},	
+        {header = Locale[Config.Lang].general['close'].." (ESC)",isMenuHeader = true,},	
     })
 end)

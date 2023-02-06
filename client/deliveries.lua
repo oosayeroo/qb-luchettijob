@@ -79,14 +79,7 @@ function startpizzarun()
                 heading=0,
                 debugpoly = Config.DebugLuchettiPoly,
             }, {
-                options = {
-                {
-                    event = "qb-luchettijob:deliveries:KnockDoor",
-                    icon = "far fa-pizza-slice",
-                    label = Locale[Config.Lang].general['knock'],
-                    item = "pizza-delivery",
-                },
-            },
+                options = {{event = "qb-luchettijob:deliveries:KnockDoor",icon = "far fa-pizza-slice",label = Locale[Config.Lang].general['knock'],item = "pizza-delivery",},},
             distance = 2.5
         })
         SetNewWaypoint(prob)
